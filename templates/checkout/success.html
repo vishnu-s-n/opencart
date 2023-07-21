@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
+    </head>
+
+    <body>
+        <div class="vh-100 d-flex justify-content-center align-items-center">
+            <div class="col-md-5 ">
+                <div class="card  bg-white shadow p-5">
+                    <div class="mb-4 text-center">
+                        <img src="{% static 'assets/img/login/success.gif' %}"  height="200px" alt="">
+                    </div>
+                    <div class="text-center">
+                        
+                        <p>Thank you for ordering our store. You will recieve a conformation <br> email shortly </p>
+                        <a href="{%url 'home' %}" button class="btn btn-outline-success">Back Home</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
+
+
+
+{% endblock %}

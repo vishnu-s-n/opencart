@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-5 border-right mt-85">
+            <img src="{% static 'assets/img/login/profile.gif' %}" height="350px"  alt="Sample image">
+
+        </div>
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Profile</h4>
+                </div>
+                <form action="{% url 'profile_update' %}" method="post">
+                    {% csrf_token %}
+
+                <div class="row mt-2 form-floating">
+                    <div class="col-md-6 "> 
+                        <label for="floatingInput">First Name</label>
+                        <input type="text" class="form-control input-lg" id="inputlg"  placeholder="first name" name="first_name" value="{{user.first_name}}">                     
+                    </div>
+                    <div class="col-md-6 "> 
+                        <label for="floatingInput">Last Name</label>
+                        <input type="text" class="form-control input-lg" id="inputlg"  placeholder="last name" name="last_name" value="{{user.last_name}}">                     
+                    </div>
+
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Username <span style="color: red;">*</span></label><input type="text" class="form-control" placeholder="enter phone number" name="username" value="{{user.username}}"></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Email <span style="color: red;">*</span></label><input type="email" class="form-control" placeholder="enter email" name="email" value="{{user.email}}"></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Password</label><input type="password" class="form-control" placeholder="Fill only if you want to change password" value=""></div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-6">
+                        <button type="submit" class="tp-in-btn w-100  rounded">Update</a>
+                    </div>
+                    <div class="col-6">
+                        <a href="{% url 'logout' %}" class="btn btn-danger w-100 h-100 rounded">Logout</a>
+                    </div>
+
+                </div>
+                </form>
+
+                
+            </div>
+        </div>
+       
+    </div>
+</div>
+</div>
+</div>
+
+{% endblock %}

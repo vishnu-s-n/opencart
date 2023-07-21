@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcomeeee</h1>
+    {{upcomingproduct.upcomingproductimages_set.all}}
+    {% for i in upcomingproduct.upcomingproductimages_set.all %}
+
+     <img src="{{i.image}}" alt="">
+
+    {% endfor %}
+</body>
+</html>
+
+{% endblock %}
